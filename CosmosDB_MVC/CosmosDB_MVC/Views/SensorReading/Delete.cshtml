@@ -1,0 +1,48 @@
+﻿@model CosmosDB_MVC.Models.SensorReading
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete a SensorReading Entry</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceIdentifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceIdentifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingTimestamp)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

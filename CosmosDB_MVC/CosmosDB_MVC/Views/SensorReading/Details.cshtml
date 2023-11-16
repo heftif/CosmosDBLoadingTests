@@ -1,0 +1,43 @@
+﻿@model CosmosDB_MVC.Models.SensorReading
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View Sensor Reading Details</h2>
+
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceIdentifier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceIdentifier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReadingTimestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReadingTimestamp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CosmosDB_MVC.Models.SensorReading>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>List of Sensor Readings</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DeviceIdentifier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingTimestamp)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var sensorReading in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => sensorReading.DeviceIdentifier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => sensorReading.ReadingValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => sensorReading.ReadingTimestamp)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=sensorReading.Id, deviceId = sensorReading.DeviceIdentifier  }) |
+                @Html.ActionLink("Details", "Details", new { id=sensorReading.Id, deviceId = sensorReading.DeviceIdentifier }) |
+                @Html.ActionLink("Delete", "Delete", new { id=sensorReading.Id,  deviceId = sensorReading.DeviceIdentifier })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
